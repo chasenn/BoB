@@ -228,11 +228,12 @@
                 
                 if([[resultDic objectForKey:@"code"] intValue]==0)
                 {
-                    NSString *url = [resultDic objectForKey:@"url"];
-                    url = [url stringByReplacingOccurrencesOfString:@"http://www.battleofballs.com?id=" withString:@""];
+                    NSArray *urlArr = [[resultDic objectForKey:@"url"] componentsSeparatedByString:@"="];
+                    
+                    
                     NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
                     [dic setObject:[NSString stringWithFormat:@"%d",i] forKey:@"index"];
-                    [dic setObject:[[url componentsSeparatedByString:@"&"] objectAtIndex:0] forKey:@"id"];
+                    [dic setObject:[[[urlArr objectAtIndex:1] componentsSeparatedByString:@"&"] objectAtIndex:0] forKey:@"id"];
                     
                     [ids addObject:dic];
                     
