@@ -283,6 +283,7 @@
         [parametersDic removeAllObjects];
         [parametersDic setObject:@"2" forKey:@"type"];
         [parametersDic setObject:[[ids objectAtIndex:i] objectForKey:@"id"] forKey:@"id"];
+        [parametersDic setObject:@"sd5sdf6d4fs4dfsd1" forKey:@"key"];
         
         [manager POST:domainStr parameters:parametersDic success:^(AFHTTPRequestOperation *operation, id responseObject) {
             // 隐藏系统风火轮
@@ -299,9 +300,13 @@
                 [count setObject:[NSString stringWithFormat:@"%d",++coun] forKey:@"count"];
                 if(coun == [ids count])
                 {
-                    [SVProgressHUD dismiss];
+//                    [SVProgressHUD dismiss];
                     [SVProgressHUD showSuccessWithStatus:@"执行成功"];
                 }
+            }else{
+//                [SVProgressHUD dismiss];
+                [SVProgressHUD showErrorWithStatus:[resultDic objectForKey:@"msg"]];
+
             }
             
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
