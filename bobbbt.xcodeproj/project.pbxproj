@@ -278,7 +278,8 @@
 				TargetAttributes = {
 					1844EA321CE9679B00DE0496 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = QZCVGX7743;
+						DevelopmentTeam = F797E3DYCF;
+						ProvisioningStyle = Automatic;
 					};
 					1844EA4B1CE9679C00DE0496 = {
 						CreatedOnToolsVersion = 7.3;
@@ -290,7 +291,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 1844EA2E1CE9679B00DE0496 /* Build configuration list for PBXProject "BoBTest" */;
+			buildConfigurationList = 1844EA2E1CE9679B00DE0496 /* Build configuration list for PBXProject "bobbbt" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -498,13 +499,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = QZCVGX7743;
+				DEVELOPMENT_TEAM = F797E3DYCF;
 				INFOPLIST_FILE = BoBTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.05info.BoBTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.05info.BoBBBT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -514,13 +516,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = QZCVGX7743;
+				DEVELOPMENT_TEAM = F797E3DYCF;
 				INFOPLIST_FILE = BoBTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.05info.BoBTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.05info.BoBBBT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -573,7 +576,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1844EA2E1CE9679B00DE0496 /* Build configuration list for PBXProject "BoBTest" */ = {
+		1844EA2E1CE9679B00DE0496 /* Build configuration list for PBXProject "bobbbt" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1844EA5E1CE9679C00DE0496 /* Debug */,

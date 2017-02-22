@@ -25,6 +25,32 @@
     NSMutableArray *ids;
     NSString *cookie;
     AFHTTPRequestOperationManager *manager;
+    NSString *htmlkey;
+}
+
+-(void)getkey
+{
+    [SVProgressHUD showWithStatus:@"获取key中，请耐心等候"];
+//    NSString *htmlString = [NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://xzfuli.cn/index.php"] encoding:NSUTF8StringEncoding error:nil];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [manager.responseSerializer setAcceptableContentTypes:[NSSet setWithObjects:@"text/html", nil]];
+    [manager GET:@"http://xzfuli.cn/index.php" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSString *htmlString= [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        NSRange key = [htmlString rangeOfString:@"'key'"];
+        htmlString = [htmlString substringFromIndex:key.location];
+        [htmlString substringToIndex:50];
+        NSArray *strarr = [htmlString componentsSeparatedByString:@"'"];
+        htmlkey = [strarr objectAtIndex:3];
+        
+        [SVProgressHUD dismiss];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [SVProgressHUD showErrorWithStatus:@"获取失败"];
+    }];
+    
+
+    
 }
 
 -(void)loadData
@@ -58,6 +84,8 @@
     m_w = [UIScreen mainScreen].bounds.size.width;
     m_h = [UIScreen mainScreen].bounds.size.height;
     
+    manager = [AFHTTPRequestOperationManager manager];
+    [self getkey];
     [self loadData];
     
     table = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, m_w, m_h)];
@@ -119,7 +147,7 @@
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"执行" style:UIBarButtonItemStyleDone target:self action:@selector(lbtClick:)];
     
-    self.navigationItem.title = @"自助刷棒棒糖 作者:Jie";
+    self.navigationItem.title = @"批量刷棒棒糖";
     
     UIWebView *webv = [[UIWebView alloc]init];
     [webv loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://xzfuli.cn/index.php"]]];
@@ -137,7 +165,7 @@
     //假如需要提交给服务器的参数是key＝1,class_id=100
     //创建一个可变字典
     NSMutableDictionary *parametersDic = [NSMutableDictionary dictionary];
-    manager = [AFHTTPRequestOperationManager manager];
+    
     
     [manager.responseSerializer setAcceptableContentTypes:[NSSet setWithObjects:@"application/json",@"text/html", @"text/plain",@"text/json",nil]];
     
@@ -283,7 +311,7 @@
         [parametersDic removeAllObjects];
         [parametersDic setObject:@"2" forKey:@"type"];
         [parametersDic setObject:[[ids objectAtIndex:i] objectForKey:@"id"] forKey:@"id"];
-        [parametersDic setObject:@"sd5sdf6d4fs4dfsd1" forKey:@"key"];
+        [parametersDic setObject:htmlkey forKey:@"key"];
         
         [manager POST:domainStr parameters:parametersDic success:^(AFHTTPRequestOperation *operation, id responseObject) {
             // 隐藏系统风火轮

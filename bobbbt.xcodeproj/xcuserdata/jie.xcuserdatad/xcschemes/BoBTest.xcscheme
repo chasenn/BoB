@@ -17,7 +17,7 @@
                BlueprintIdentifier = "1844EA321CE9679B00DE0496"
                BuildableName = "BoBTest.app"
                BlueprintName = "BoBTest"
-               ReferencedContainer = "container:BoBTest.xcodeproj">
+               ReferencedContainer = "container:bobbbt.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "1844EA4B1CE9679C00DE0496"
                BuildableName = "BoBTestTests.xctest"
                BlueprintName = "BoBTestTests"
-               ReferencedContainer = "container:BoBTest.xcodeproj">
+               ReferencedContainer = "container:bobbbt.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -45,7 +45,7 @@
                BlueprintIdentifier = "1844EA561CE9679C00DE0496"
                BuildableName = "BoBTestUITests.xctest"
                BlueprintName = "BoBTestUITests"
-               ReferencedContainer = "container:BoBTest.xcodeproj">
+               ReferencedContainer = "container:bobbbt.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,7 +55,7 @@
             BlueprintIdentifier = "1844EA321CE9679B00DE0496"
             BuildableName = "BoBTest.app"
             BlueprintName = "BoBTest"
-            ReferencedContainer = "container:BoBTest.xcodeproj">
+            ReferencedContainer = "container:bobbbt.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -78,7 +78,7 @@
             BlueprintIdentifier = "1844EA321CE9679B00DE0496"
             BuildableName = "BoBTest.app"
             BlueprintName = "BoBTest"
-            ReferencedContainer = "container:BoBTest.xcodeproj">
+            ReferencedContainer = "container:bobbbt.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -97,7 +97,7 @@
             BlueprintIdentifier = "1844EA321CE9679B00DE0496"
             BuildableName = "BoBTest.app"
             BlueprintName = "BoBTest"
-            ReferencedContainer = "container:BoBTest.xcodeproj">
+            ReferencedContainer = "container:bobbbt.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
